@@ -1,0 +1,31 @@
+#wrapper{
+    width:400px;
+    height:400px;
+    overflow:hidden;
+    position:relative;
+}
+
+#content {
+    position:absolute;
+    top:-800px;
+    left:-1520px;
+    width: 3440px;
+    height: 2000px;
+    background-color: red;
+}
+#inner {
+    width: 1920px;
+    height: 1200px;
+    top:800px;
+    left:1520px;
+    cursor: move;
+}
+
+#images-cntnr {
+  margin-top: 10px;
+}
+
+.sngl-img-cntnr {
+  border: 2px solid red;
+  margin: 2px;
+}
