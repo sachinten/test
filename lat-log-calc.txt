@@ -1,0 +1,19 @@
+foreach($restaurant_list as $restaurantlist){
+		// calculate range for restaurant
+					$lat2=$restaurantlist['RestaurantDetail']['latitude'] ;
+					$lon2=$restaurantlist['RestaurantDetail']['longitude'] ;
+					if(isset($lat1)&&isset($lon2)){
+						
+						$theta = $lon1 - $lon2; 
+						$dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta)); 
+						$dist = acos($dist); 
+						$dist = rad2deg($dist); 
+						$miles = $dist * 60 * 1.1515;
+						$distance=$miles * 1.609344; 	// in km
+						$list_dis.=$distance.',';
+						$i++;
+					}
+					if($distance<=$radius){
+						$rest_id.=$restaurantlist['RestaurantDetail']['id'].',';
+					}
+				}
